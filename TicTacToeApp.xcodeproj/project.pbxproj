@@ -13,10 +13,12 @@
 		BB86C13C2A1475C100A48092 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB86C13B2A1475C100A48092 /* Preview Assets.xcassets */; };
 		BB86C13E2A1475C100A48092 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C13D2A1475C100A48092 /* Persistence.swift */; };
 		BB86C1412A1475C100A48092 /* TicTacToeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB86C13F2A1475C100A48092 /* TicTacToeApp.xcdatamodeld */; };
-		BB86C14B2A1475C100A48092 /* TicTacToeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C14A2A1475C100A48092 /* TicTacToeAppTests.swift */; };
+		BB86C14B2A1475C100A48092 /* TicModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C14A2A1475C100A48092 /* TicModelTests.swift */; };
 		BB86C1552A1475C100A48092 /* TicTacToeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C1542A1475C100A48092 /* TicTacToeAppUITests.swift */; };
 		BB86C1572A1475C100A48092 /* TicTacToeAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C1562A1475C100A48092 /* TicTacToeAppUITestsLaunchTests.swift */; };
 		BB86C1662A153B8700A48092 /* TicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C1652A153B8700A48092 /* TicModel.swift */; };
+		BB86C16D2A160C6300A48092 /* TicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C16C2A160C6300A48092 /* TicViewModel.swift */; };
+		BB86C16F2A160CA300A48092 /* TicViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C16E2A160CA300A48092 /* TicViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +47,13 @@
 		BB86C13D2A1475C100A48092 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BB86C1402A1475C100A48092 /* TicTacToeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TicTacToeApp.xcdatamodel; sourceTree = "<group>"; };
 		BB86C1462A1475C100A48092 /* TicTacToeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB86C14A2A1475C100A48092 /* TicTacToeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeAppTests.swift; sourceTree = "<group>"; };
+		BB86C14A2A1475C100A48092 /* TicModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicModelTests.swift; sourceTree = "<group>"; };
 		BB86C1502A1475C100A48092 /* TicTacToeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB86C1542A1475C100A48092 /* TicTacToeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeAppUITests.swift; sourceTree = "<group>"; };
 		BB86C1562A1475C100A48092 /* TicTacToeAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BB86C1652A153B8700A48092 /* TicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicModel.swift; sourceTree = "<group>"; };
+		BB86C16C2A160C6300A48092 /* TicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicViewModel.swift; sourceTree = "<group>"; };
+		BB86C16E2A160CA300A48092 /* TicViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		BB86C1332A1475C000A48092 /* TicTacToeApp */ = {
 			isa = PBXGroup;
 			children = (
+				BB86C16B2A160C5000A48092 /* ViewModels */,
 				BB86C1632A153B6900A48092 /* Data */,
 				BB86C1342A1475C000A48092 /* TicTacToeAppApp.swift */,
 				BB86C1362A1475C000A48092 /* ContentView.swift */,
@@ -122,7 +127,8 @@
 		BB86C1492A1475C100A48092 /* TicTacToeAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				BB86C14A2A1475C100A48092 /* TicTacToeAppTests.swift */,
+				BB86C1682A160BF900A48092 /* ViewModelTests */,
+				BB86C1672A160BF200A48092 /* ModelTests */,
 			);
 			path = TicTacToeAppTests;
 			sourceTree = "<group>";
@@ -150,6 +156,30 @@
 				BB86C1652A153B8700A48092 /* TicModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BB86C1672A160BF200A48092 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB86C14A2A1475C100A48092 /* TicModelTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		BB86C1682A160BF900A48092 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB86C16E2A160CA300A48092 /* TicViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		BB86C16B2A160C5000A48092 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB86C16C2A160C6300A48092 /* TicViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB86C13E2A1475C100A48092 /* Persistence.swift in Sources */,
+				BB86C16D2A160C6300A48092 /* TicViewModel.swift in Sources */,
 				BB86C1372A1475C000A48092 /* ContentView.swift in Sources */,
 				BB86C1412A1475C100A48092 /* TicTacToeApp.xcdatamodeld in Sources */,
 				BB86C1352A1475C000A48092 /* TicTacToeAppApp.swift in Sources */,
@@ -294,7 +325,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB86C14B2A1475C100A48092 /* TicTacToeAppTests.swift in Sources */,
+				BB86C14B2A1475C100A48092 /* TicModelTests.swift in Sources */,
+				BB86C16F2A160CA300A48092 /* TicViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
