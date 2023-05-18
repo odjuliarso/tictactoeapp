@@ -8,16 +8,28 @@
 import XCTest
 @testable import TicTacToeApp
 
-final class TicTacToeAppTests: XCTestCase {
-
+class TicModelTests: XCTestCase {
+    
+    // The first unit test is to verify initial grid is 9 cells
     func test_initialValue_NineCells() {
-            // Arrange
-            let ticModel = TicModel()
+        
+        // Arrange
+        let ticModel = TicModel()
+        
+        // Act
+        
+        // Assert
+        XCTAssertEqual(ticModel.grid.count, 9)
+    }
+    
+    func test_initialValue_IsBlank() {
+        // Arrange
+        let ticModel = TicModel()
             
-            // Act
-            
-            // Assert
-        }
-
-
+        // Act
+        
+        // Assert
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.b }.count), 9)
+    }
 }
+
