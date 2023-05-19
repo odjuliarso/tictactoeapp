@@ -26,7 +26,7 @@ class TicModelTests: XCTestCase {
     func test_initialValue_IsBlank() {
         // Arrange
         let ticModel = TicModel()
-            
+        
         // Act
         
         // Assert
@@ -112,147 +112,146 @@ class TicModelTests: XCTestCase {
     }
     
     func test_middleLineX_xIsWinner() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in [3,4,5] {
-                ticModel.setCell(n: i, c: .x)
-            }
-            let result = ticModel.updateGameStatus()
-
-            // Assert
-            XCTAssertTrue(result)
-            XCTAssertEqual(Winner.x, ticModel.winner)
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in [3,4,5] {
+            ticModel.setCell(n: i, c: .x)
         }
-
-        func test_bottomLineX_xIsWinner() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in [6,7,8] {
-                ticModel.setCell(n: i, c: .x)
-            }
-            let result = ticModel.updateGameStatus()
-
-            // Assert
-            XCTAssertTrue(result)
-            XCTAssertEqual(Winner.x, ticModel.winner)
+        let result = ticModel.updateGameStatus()
+        
+        // Assert
+        XCTAssertTrue(result)
+        XCTAssertEqual(Winner.x, ticModel.winner)
+    }
+    
+    func test_bottomLineX_xIsWinner() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in [6,7,8] {
+            ticModel.setCell(n: i, c: .x)
         }
-
-        func test_leftLineO_oIsWinner() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in [0,3,6] {
-                ticModel.setCell(n: i, c: .o)
-            }
-            let result = ticModel.updateGameStatus()
-
-            // Assert
-            XCTAssertTrue(result)
-            XCTAssertEqual(Winner.o, ticModel.winner)
+        let result = ticModel.updateGameStatus()
+        
+        // Assert
+        XCTAssertTrue(result)
+        XCTAssertEqual(Winner.x, ticModel.winner)
+    }
+    
+    func test_leftLineO_oIsWinner() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in [0,3,6] {
+            ticModel.setCell(n: i, c: .o)
         }
-
-        func test_middleLineO_oIsWinner() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in [1,4,7] {
-                ticModel.setCell(n: i, c: .o)
-            }
-            let result = ticModel.updateGameStatus()
-
-            // Assert
-            XCTAssertTrue(result)
-            XCTAssertEqual(Winner.o, ticModel.winner)
+        let result = ticModel.updateGameStatus()
+        
+        // Assert
+        XCTAssertTrue(result)
+        XCTAssertEqual(Winner.o, ticModel.winner)
+    }
+    
+    func test_middleLineO_oIsWinner() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in [1,4,7] {
+            ticModel.setCell(n: i, c: .o)
         }
-
-        func test_rightLineO_oIsWinner() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in [2,5,8] {
-                ticModel.setCell(n: i, c: .o)
-            }
-            let result = ticModel.updateGameStatus()
-
-            // Assert
-            XCTAssertTrue(result)
-            XCTAssertEqual(Winner.o, ticModel.winner)
+        let result = ticModel.updateGameStatus()
+        
+        // Assert
+        XCTAssertTrue(result)
+        XCTAssertEqual(Winner.o, ticModel.winner)
+    }
+    
+    func test_rightLineO_oIsWinner() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in [2,5,8] {
+            ticModel.setCell(n: i, c: .o)
         }
-
-        func test_diagonalO_oIsWinner() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in [0,4,8] {
-                ticModel.setCell(n: i, c: .o)
-            }
-            let result = ticModel.updateGameStatus()
-
-            // Assert
-            XCTAssertTrue(result)
-            XCTAssertEqual(Winner.o, ticModel.winner)
+        let result = ticModel.updateGameStatus()
+        
+        // Assert
+        XCTAssertTrue(result)
+        XCTAssertEqual(Winner.o, ticModel.winner)
+    }
+    
+    func test_diagonalO_oIsWinner() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in [0,4,8] {
+            ticModel.setCell(n: i, c: .o)
         }
-
-        func test_diagonalX_xIsWinner() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in [2,4,6] {
-                ticModel.setCell(n: i, c: .x)
-            }
-            let result = ticModel.updateGameStatus()
-
-            // Assert
-            XCTAssertTrue(result)
-            XCTAssertEqual(Winner.x, ticModel.winner)
+        let result = ticModel.updateGameStatus()
+        
+        // Assert
+        XCTAssertTrue(result)
+        XCTAssertEqual(Winner.o, ticModel.winner)
+    }
+    
+    func test_diagonalX_xIsWinner() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in [2,4,6] {
+            ticModel.setCell(n: i, c: .x)
         }
-
-        func test_isGridFullNewGame_false() {
-            // Arrange
-            let ticModel = TicModel()
-
-            // Act
-
-            // Assert
-            XCTAssertFalse(ticModel.isGridFull)
-        }
-
-        func test_isGridFullPartialGame_false() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in 0..<5 {
-                ticModel.setCell(n: i, c: .x)
-            }
-
-            // Assert
-            XCTAssertFalse(ticModel.isGridFull)
-        }
-
-        func test_isGridFullGameOver_true() {
-            // Arrange
-            var ticModel = TicModel()
-
-            // Act
-            for i in 0..<9 {
-                ticModel.setCell(n: i, c: .o)
-            }
-
-            // Assert
-            XCTAssertTrue(ticModel.isGridFull)
+        let result = ticModel.updateGameStatus()
+        
+        // Assert
+        XCTAssertTrue(result)
+        XCTAssertEqual(Winner.x, ticModel.winner)
+    }
+    
+    func test_isGridFullNewGame_false() {
+        // Arrange
+        let ticModel = TicModel()
+        
+        // Act
+        
+        // Assert
+        XCTAssertFalse(ticModel.isGridFull)
+    }
+    
+    func test_isGridFullPartialGame_false() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in 0..<5 {
+            ticModel.setCell(n: i, c: .x)
         }
         
+        // Assert
+        XCTAssertFalse(ticModel.isGridFull)
     }
+    
+    func test_isGridFullGameOver_true() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        for i in 0..<9 {
+            ticModel.setCell(n: i, c: .o)
+        }
+        
+        // Assert
+        XCTAssertTrue(ticModel.isGridFull)
+    }
+    
 }
 
 
