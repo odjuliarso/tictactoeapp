@@ -106,9 +106,9 @@
 		BB86C1332A1475C000A48092 /* TicTacToeApp */ = {
 			isa = PBXGroup;
 			children = (
-				BB86C1702A16F82800A48092 /* Views */,
+				BB86C1642A153B7400A48092 /* Model */,
 				BB86C16B2A160C5000A48092 /* ViewModels */,
-				BB86C1632A153B6900A48092 /* Data */,
+				BB86C1702A16F82800A48092 /* Views */,
 				BB86C1342A1475C000A48092 /* TicTacToeAppApp.swift */,
 				BB86C1362A1475C000A48092 /* ContentView.swift */,
 				BB86C1382A1475C100A48092 /* Assets.xcassets */,
@@ -143,14 +143,6 @@
 				BB86C1562A1475C100A48092 /* TicTacToeAppUITestsLaunchTests.swift */,
 			);
 			path = TicTacToeAppUITests;
-			sourceTree = "<group>";
-		};
-		BB86C1632A153B6900A48092 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				BB86C1642A153B7400A48092 /* Model */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		BB86C1642A153B7400A48092 /* Model */ = {
