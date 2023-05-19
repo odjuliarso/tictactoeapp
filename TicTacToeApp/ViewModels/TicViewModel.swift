@@ -21,4 +21,14 @@ class TicViewModel: ObservableObject {
     var winner: Winner {
         get { ticModel.winner }
     }
+        get { ticModel.isGridFull }
+    }
+    
+    func setCell(index: Int, cellValue: Cell) {
+        ticModel.setCell(n: index, c: cellValue)
+        
+        _ = ticModel.updateGameStatus()
+    }
+    
+    
 }
