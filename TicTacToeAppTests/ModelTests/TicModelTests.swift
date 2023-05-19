@@ -41,7 +41,19 @@ class TicModelTests: XCTestCase {
         ticModel.setCell(n: 3, c: .x)
         
         // Assert
-        XCTAssertTrue(ticModel.grid[3] == cell.x)
+        XCTAssertTrue(ticModel.grid[3] == Cell.x)
+    }
+    
+    // test to verify setting a value to a cell outside of grid
+    func test_setCell42_IsIgnored() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // Act
+        ticModel.setCell(n: 42, c: .x)
+        
+        // Assert
+        XCTAssertTrue(ticModel.grid.contains { $0 == Cell.b } )
     }
 }
 

@@ -21,11 +21,18 @@ struct TicModel {
     init() {
         _grid = []
         for _ in 0..<9 {
-            _grid.append(Cell.x)
+            _grid.append(Cell.b)
         }
     }
     
     var grid: [Cell] {
         get { _grid }
+    }
+    
+    mutating func setCell(n: Int, c: Cell) {
+        guard _grid.indices.contains(n) else {
+            return
+        }
+        _grid[n] = c
     }
 }
