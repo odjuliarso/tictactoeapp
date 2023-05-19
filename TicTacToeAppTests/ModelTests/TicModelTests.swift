@@ -55,5 +55,34 @@ class TicModelTests: XCTestCase {
         // Assert
         XCTAssertTrue(ticModel.grid.contains { $0 == Cell.b } )
     }
+    
+    // test to verify a cell can only be set once
+    func test_setCellTwice_ignoreSecond() {
+        // Arrange
+        var ticModel = TicModel()
+        
+        // act
+        ticModel.setCell(n: 3, c: .x)
+        ticModel.setCell(n: 3, c: .o)
+        
+        // assert
+        XCTAssertTrue(ticModel.grid[3] == Cell.x)
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.x }.count), 1)
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.b }.count), 8)
+    }
+    
+    func test_setCellBlank_ignored() {
+        // arrange
+        var ticModel = TicModel()
+        
+        // act
+        ticModel.setCell(n: 3, c: .x)
+        ticModel.setCell(n: 3, c: .b)
+        
+        // assert
+        XCTAssertTrue(ticModel.grid[3] == Cell.x)
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.x }.count) , 1)
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.b }.count) , 8)
+    }
 }
 
