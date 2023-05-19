@@ -19,6 +19,7 @@
 		BB86C1662A153B8700A48092 /* TicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C1652A153B8700A48092 /* TicModel.swift */; };
 		BB86C16D2A160C6300A48092 /* TicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C16C2A160C6300A48092 /* TicViewModel.swift */; };
 		BB86C16F2A160CA300A48092 /* TicViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C16E2A160CA300A48092 /* TicViewModelTests.swift */; };
+		BB86C1722A16F83A00A48092 /* TicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86C1712A16F83A00A48092 /* TicView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		BB86C1652A153B8700A48092 /* TicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicModel.swift; sourceTree = "<group>"; };
 		BB86C16C2A160C6300A48092 /* TicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicViewModel.swift; sourceTree = "<group>"; };
 		BB86C16E2A160CA300A48092 /* TicViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicViewModelTests.swift; sourceTree = "<group>"; };
+		BB86C1712A16F83A00A48092 /* TicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		BB86C1332A1475C000A48092 /* TicTacToeApp */ = {
 			isa = PBXGroup;
 			children = (
+				BB86C1702A16F82800A48092 /* Views */,
 				BB86C16B2A160C5000A48092 /* ViewModels */,
 				BB86C1632A153B6900A48092 /* Data */,
 				BB86C1342A1475C000A48092 /* TicTacToeAppApp.swift */,
@@ -180,6 +183,14 @@
 				BB86C16C2A160C6300A48092 /* TicViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BB86C1702A16F82800A48092 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB86C1712A16F83A00A48092 /* TicView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +329,7 @@
 				BB86C1412A1475C100A48092 /* TicTacToeApp.xcdatamodeld in Sources */,
 				BB86C1352A1475C000A48092 /* TicTacToeAppApp.swift in Sources */,
 				BB86C1662A153B8700A48092 /* TicModel.swift in Sources */,
+				BB86C1722A16F83A00A48092 /* TicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

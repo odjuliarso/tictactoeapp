@@ -22,6 +22,7 @@ class TicModelTests: XCTestCase {
         XCTAssertEqual(ticModel.grid.count, 9)
     }
     
+    //initial unit test verify initial grid is blank
     func test_initialValue_IsBlank() {
         // Arrange
         let ticModel = TicModel()
