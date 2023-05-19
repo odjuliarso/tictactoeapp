@@ -30,4 +30,16 @@ class TicViewModelTests: XCTestCase {
         XCTAssertEqual((ticViewModel.grid.filter { $0 == Cell.b }.count), 9)
     }
 
+    func test_initialValue_noWinner() {
+        
+        // given
+        let ticViewModel = TicViewModel()
+
+        // when
+
+        // then
+        XCTAssertEqual(Winner.none, ticViewModel.winner)
+    }
+    
+    
 }
