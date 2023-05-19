@@ -37,6 +37,10 @@ struct TicModel {
         get { _winner }
     }
     
+    var isGridFull: Bool {
+        get { grid.filter { $0 == Cell.b }.count == 0 }
+    }
+    
     mutating func setCell(n: Int, c: Cell) {
         guard _grid.indices.contains(n) else {
             return
@@ -50,13 +54,12 @@ struct TicModel {
     mutating func updateGameStatus() -> Bool {
         let winOptions: [Set<Int>] = [
             [0,1,2], [3,4,5], [6,7,8],
-            [0,3,6], [1,4,7], [2,5,7],
+            [0,3,6], [1,4,7], [2,5,8],
             [0,4,8], [2,4,6]
         ]
         
         let oCells: Set<Int> = Set(_grid.indices.map { _grid[$0] == Cell.o ? $0 : -1 })
-        let xCells: Set<Int> = Set(_grid.indices.map {
-            _grid[$0] == Cell.x ? $0 : -1 })
+        let xCells: Set<Int> = Set(_grid.indices.map { _grid[$0] == Cell.x ? $0 : -1 })
         
         for i in winOptions {
             if i.intersection(xCells) == i {
