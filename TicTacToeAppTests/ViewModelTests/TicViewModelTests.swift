@@ -58,5 +58,33 @@ class TicViewModelTests: XCTestCase {
            XCTAssertEqual(Winner.none, ticViewModel.winner)
        }
     
+    func test_fullGrid_xWinner() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+        
+        // Act
+        let fullGrid: [Cell] = [.x, .o, .x,
+                                .o, .x, .o,
+                                .x, .o, .x]
+        for (n,c) in zip(0..<9, fullGrid) {
+            ticViewModel.setCell(index: n, cellValue: c)
+        }
+        
+        // Assert
+        XCTAssertTrue(ticViewModel.isGameOver)
+        XCTAssertEqual(Winner.x, ticViewModel.winner)
+    }
     
-}
+    func test_winNotFull_oWinner() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+        
+        // Act
+        ticViewModel.setCell(index: 0, cellValue: .o)
+        ticViewModel.setCell(index: 1, cellValue: .o)
+        ticViewModel.setCell(index: 2, cellValue: .o)
+        
+        // Assert
+        XCTAssertTrue(ticViewModel.isGameOver)
+        XCTAssertEqual(Winner.o, ticViewModel.winner)
+    }}
