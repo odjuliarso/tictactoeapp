@@ -33,6 +33,9 @@ struct TicModel {
         guard _grid.indices.contains(n) else {
             return
         }
+        guard _grid[n] == .b else {
+            return
+        }
         _grid[n] = c
     }
 }
