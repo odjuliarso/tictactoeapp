@@ -21,7 +21,9 @@ class TicViewModel: ObservableObject {
     var winner: Winner {
         get { ticModel.winner }
     }
-        get { ticModel.isGridFull }
+    
+    var isGameOver: Bool {
+        get { ticModel.isGridFull || ticModel.winner != .none }
     }
     
     func setCell(index: Int, cellValue: Cell) {
